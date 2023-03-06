@@ -2,7 +2,6 @@
 
 namespace Tests\Model;
 
-use Weaviate\Collections\ClassCollection;
 use Weaviate\Collections\PropertyCollection;
 use Weaviate\Model\ObjectModel;
 

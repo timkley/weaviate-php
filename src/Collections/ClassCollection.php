@@ -2,8 +2,8 @@
 
 namespace Weaviate\Collections;
 
-use Weaviate\Model\ClassModel;
 use Illuminate\Support\Collection;
+use Weaviate\Model\ClassModel;
 
 class ClassCollection extends Collection
 {

@@ -24,7 +24,7 @@ class Batch extends Endpoint
             'match' => [
                 'class' => $className,
                 'where' => $where,
-            ]
+            ],
         ]);
     }
 }

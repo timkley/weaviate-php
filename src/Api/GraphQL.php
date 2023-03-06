@@ -9,7 +9,7 @@ class GraphQL extends Endpoint
     public function get(string $query): array
     {
         return $this->api->post(self::ENDPOINT, [
-            'query' => $query
+            'query' => $query,
         ])->json();
     }
 }

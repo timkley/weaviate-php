@@ -2,12 +2,12 @@
 
 namespace Weaviate;
 
-use Illuminate\Http\Client\PendingRequest;
-use Weaviate\Exceptions\AuthenticationException;
-use Weaviate\Exceptions\NotFoundException;
 use Exception;
 use Illuminate\Http\Client\Factory as HttpClient;
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
+use Weaviate\Exceptions\AuthenticationException;
+use Weaviate\Exceptions\NotFoundException;
 
 class Api
 {
