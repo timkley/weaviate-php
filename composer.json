@@ -1,0 +1,52 @@
+{
+    "name": "timkley/weaviate-php",
+    "description": "A PHP HTTP Client for the Weaviate REST API",
+    "keywords": [
+        "php",
+        "client",
+        "weaviate",
+        "api"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tim Kleyersburg",
+            "email": "timkley@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "guzzlehttp/guzzle": "^7.0",
+        "illuminate/http": "^9.0"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^1.8",
+        "pestphp/pest": "^1.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Weaviate\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "phpstan": [
+            "./vendor/bin/phpstan --memory-limit=2048M"
+        ],
+        "test": [
+            "./vendor/bin/pest"
+        ]
+    }
+}

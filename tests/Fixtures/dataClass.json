@@ -1,0 +1,26 @@
+{
+    "class": "Category",
+    "description": "Category an article is a type off",
+    "moduleConfig": {
+        "text2vec-contextionary": {
+            "vectorizeClassName": false
+        }
+    },
+    "properties": [
+        {
+            "dataType": [
+                "string"
+            ],
+            "description": "category name",
+            "indexInverted": true,
+            "moduleConfig": {
+                "text2vec-contextionary": {
+                    "vectorizePropertyName": false
+                }
+            },
+            "name": "name"
+        }
+    ],
+    "vectorIndexType": "hnsw",
+    "vectorizer": "none"
+}

@@ -1,0 +1,193 @@
+{
+    "classes": [
+        {
+            "class": "Category",
+            "description": "Category an article is a type off",
+            "moduleConfig": {
+                "text2vec-contextionary": {
+                    "vectorizeClassName": false
+                }
+            },
+            "properties": [
+                {
+                    "dataType": [
+                        "string"
+                    ],
+                    "description": "category name",
+                    "indexInverted": true,
+                    "moduleConfig": {
+                        "text2vec-contextionary": {
+                            "vectorizePropertyName": false
+                        }
+                    },
+                    "name": "name"
+                }
+            ],
+            "vectorIndexType": "hnsw",
+            "vectorizer": "none"
+        },
+        {
+            "class": "Publication",
+            "description": "A publication with an online source",
+            "moduleConfig": {
+                "text2vec-contextionary": {
+                    "vectorizeClassName": false
+                }
+            },
+            "properties": [
+                {
+                    "dataType": [
+                        "string"
+                    ],
+                    "description": "Name of the publication",
+                    "name": "name"
+                },
+                {
+                    "dataType": [
+                        "geoCoordinates"
+                    ],
+                    "description": "Geo location of the HQ",
+                    "name": "headquartersGeoLocation"
+                },
+                {
+                    "dataType": [
+                        "Article"
+                    ],
+                    "description": "The articles this publication has",
+                    "name": "hasArticles"
+                },
+                {
+                    "dataType": [
+                        "Article"
+                    ],
+                    "description": "Articles this author wrote",
+                    "name": "wroteArticles"
+                }
+            ],
+            "vectorIndexType": "hnsw",
+            "vectorizer": "none"
+        },
+        {
+            "class": "Author",
+            "description": "Normalised types",
+            "moduleConfig": {
+                "text2vec-contextionary": {
+                    "vectorizeClassName": true
+                }
+            },
+            "properties": [
+                {
+                    "dataType": [
+                        "string"
+                    ],
+                    "description": "Name of the author",
+                    "name": "name"
+                },
+                {
+                    "dataType": [
+                        "Publication"
+                    ],
+                    "description": "The publication this author writes for",
+                    "name": "writesFor"
+                }
+            ],
+            "vectorIndexType": "hnsw",
+            "vectorizer": "none"
+        },
+        {
+            "class": "Article",
+            "description": "Normalised types",
+            "moduleConfig": {
+                "text2vec-contextionary": {
+                    "vectorizeClassName": false
+                }
+            },
+            "properties": [
+                {
+                    "dataType": [
+                        "string"
+                    ],
+                    "description": "title of the article",
+                    "indexInverted": true,
+                    "moduleConfig": {
+                        "text2vec-contextionary": {
+                            "vectorizePropertyName": false
+                        }
+                    },
+                    "name": "title"
+                },
+                {
+                    "dataType": [
+                        "string"
+                    ],
+                    "description": "url of the article",
+                    "indexInverted": false,
+                    "moduleConfig": {
+                        "text2vec-contextionary": {
+                            "vectorizePropertyName": false
+                        }
+                    },
+                    "name": "url"
+                },
+                {
+                    "dataType": [
+                        "text"
+                    ],
+                    "description": "summary of the article",
+                    "indexInverted": true,
+                    "moduleConfig": {
+                        "text2vec-contextionary": {
+                            "vectorizePropertyName": false
+                        }
+                    },
+                    "name": "summary"
+                },
+                {
+                    "dataType": [
+                        "date"
+                    ],
+                    "description": "date of publication of the article",
+                    "name": "publicationDate"
+                },
+                {
+                    "dataType": [
+                        "int"
+                    ],
+                    "description": "Words in this article",
+                    "name": "wordCount"
+                },
+                {
+                    "dataType": [
+                        "Author",
+                        "Publication"
+                    ],
+                    "description": "authors this article has",
+                    "name": "hasAuthors"
+                },
+                {
+                    "dataType": [
+                        "Publication"
+                    ],
+                    "description": "publication this article is in",
+                    "name": "inPublication"
+                },
+                {
+                    "dataType": [
+                        "Category"
+                    ],
+                    "description": "category this article is of",
+                    "name": "ofCategory"
+                },
+                {
+                    "dataType": [
+                        "boolean"
+                    ],
+                    "description": "whether the article is currently accessible through the url",
+                    "name": "isAccessible"
+                }
+            ],
+            "vectorIndexType": "hnsw",
+            "vectorizer": "none"
+        }
+    ]
+}

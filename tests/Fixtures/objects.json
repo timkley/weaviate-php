@@ -1,0 +1,28 @@
+{
+    "deprecations": null,
+    "objects": [
+        {
+            "class": "Category",
+            "creationTimeUnix": 1677235243361,
+            "id": "02c0906d-fd93-4159-a711-47ceb585925f",
+            "lastUpdateTimeUnix": 1677235243361,
+            "properties": {
+                "content": "This is some content",
+                "link": "This is a link"
+            },
+            "vectorWeights": null
+        },
+        {
+            "class": "Category",
+            "creationTimeUnix": 1677235243361,
+            "id": "02c0906d-fd93-4159-a711-47ceb585925f",
+            "lastUpdateTimeUnix": 1677235243361,
+            "properties": {
+                "content": "This is some content",
+                "link": "This is a link"
+            },
+            "vectorWeights": null
+        }
+    ],
+    "totalResults": 2
+}
