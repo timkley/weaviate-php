@@ -13,7 +13,7 @@ class SchemaModel extends Model
         $this->classes = isset($data['classes']) ? ClassCollection::fromArray($data['classes']) : null;
     }
 
-    public function getClasses(): ClassCollection
+    public function getClasses(): ?ClassCollection
     {
         return $this->classes;
     }

@@ -1,7 +1,7 @@
 # Weaviate PHP SDK
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/timkley/weaviate-php.svg?style=flat-square)](https://packagist.org/packages/timkley/weaviate-php)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/timkley/weaviate-php/Run%20Tests?label=tests)](https://github.com/timkley/weaviate-php/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/timkley/weaviate-php/run-tests.yml?label=tests)](https://github.com/timkley/weaviate-php/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/timkley/weaviate-php.svg?style=flat-square)](https://packagist.org/packages/timkley/weaviate-php)
 
 This is a wrapper around the [Weaviate REST API](https://weaviate.io/developers/weaviate/api/rest). It is still a WIP and not all endpoints are implemented.
