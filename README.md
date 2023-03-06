@@ -10,7 +10,7 @@ This is a wrapper around the [Weaviate REST API](https://weaviate.io/developers/
 
 ### Requirements
 
-> PHP 8.1
+> PHP 8.1 or PHP 8.2
 
 ### With composer
 
@@ -40,10 +40,14 @@ $weaviate = new Weaviate('http://localhost:8080', 'your-token');
 
 ## Todo
 
+- [ ] Missing endpoints
+
 ## Credits
 
 I took a lot of inspiration from existing packages like [mailgun/mailgun-php](https://github.com/mailgun/mailgun-php)
 or [lepikhinb/fathom-api](https://github.com/lepikhinb/fathom-api).
+
+And of course [Weaviate](https://weaviate.io/) for providing this great project.
 
 Thanks for contributing to open source!
 

@@ -1,0 +1,19 @@
+name: Run PHPStan
+
+on: [ push ]
+
+jobs:
+  phpstan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: Install composer
+        uses: php-actions/composer@v6
+
+      - name: PHPStan
+        run: composer phpstan
