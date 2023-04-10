@@ -30,6 +30,18 @@ You need to [obtain the token](https://weaviate.io/developers/weaviate/configura
 use Weaviate\Weaviate;
 
 $weaviate = new Weaviate('http://localhost:8080', 'your-token');
+
+$weaviate->graphql()->get('{
+    Get {
+        Things {
+            Article {
+                title
+            }
+        }
+    }
+}');
+
+$weaviate->batch()->create($objects);
 ```
 
 ## Testing
@@ -37,10 +49,6 @@ $weaviate = new Weaviate('http://localhost:8080', 'your-token');
 ```bash
 ./vendor/bin/pest
 ```
-
-## Todo
-
-- [ ] Missing endpoints
 
 ## Credits
 
