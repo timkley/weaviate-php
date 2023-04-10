@@ -14,10 +14,10 @@ class Api
     public HttpClient $httpClient;
     public Response $latestResponse;
 
-//    protected ?string $filter = null;
-//    protected ?string $order = null;
-//    protected ?int $page = null;
-//    protected ?int $pageSize = null;
+    //    protected ?string $filter = null;
+    //    protected ?string $order = null;
+    //    protected ?int $page = null;
+    //    protected ?int $pageSize = null;
 
     public function __construct(private readonly string $apiUrl, private readonly string $apiToken, private readonly array $additionalHeaders = [])
     {
