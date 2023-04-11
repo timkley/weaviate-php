@@ -20,9 +20,7 @@ composer require timkley/weaviate-php
 
 ## Usage
 
-If you are using OIDC authentication, you need to provide a token. Otherwise you can use the `Weaviate` class directly.
-
-You need to [obtain the token](https://weaviate.io/developers/weaviate/configuration/authentication#manually-obtaining-and-passing-tokens) and use it to initialize the client. 
+This package supports API key authentication (available in Weaviate 1.18 and higher) or anonymous access. Please refer to the [official documentation](https://weaviate.io/developers/weaviate/configuration/authentication#api-key) for more information.
 
 ```php
 <?php
@@ -47,7 +45,7 @@ $weaviate->batch()->create($objects);
 ## Testing
 
 ```bash
-./vendor/bin/pest
+composer test
 ```
 
 ## Credits
