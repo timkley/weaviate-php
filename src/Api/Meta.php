@@ -3,7 +3,6 @@
 namespace Weaviate\Api;
 
 use Weaviate\Model\MetaModel;
-use Weaviate\Model\SchemaModel as SchemaModel;
 
 class Meta extends Endpoint
 {
