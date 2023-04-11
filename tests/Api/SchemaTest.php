@@ -2,6 +2,7 @@
 
 namespace Tests\Api;
 
+use Weaviate\Model\PropertyModel;
 use Weaviate\Model\SchemaModel;
 
 it('can get the schema', function () {
@@ -37,4 +38,35 @@ it('can create a schema class', function () {
     ]);
 
     expect($schemaClass)->toBeInstanceOf(SchemaModel::class);
+});
+
+it('can update a schema class', function () {
+    fakeJsonResponse('dataClass.json');
+
+    $schemaClass = weaviate()->schema()->update('Category', [
+        'class' => 'Category',
+        'description' => 'A category',
+    ]);
+
+    expect($schemaClass)->toBeInstanceOf(SchemaModel::class);
+});
+
+it('can add a property', function () {
+    fakeJsonResponse('property.json');
+
+    $schemaClass = weaviate()->schema()->addProperty('Category', [
+        'name' => 'name',
+        'dataType' => [
+            'dataType' => 'string',
+        ],
+    ]);
+
+    expect($schemaClass)->toBeInstanceOf(PropertyModel::class);
+});
+
+it('can delete a schema class', function () {
+    fakeResponse();
+    $response = weaviate()->schema()->delete('Category');
+
+    expect($response)->status()->toBe(200);
 });

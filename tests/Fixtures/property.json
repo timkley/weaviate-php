@@ -1,0 +1,13 @@
+{
+    "dataType": [
+        "string"
+    ],
+    "description": "category name",
+    "indexInverted": true,
+    "moduleConfig": {
+        "text2vec-contextionary": {
+            "vectorizePropertyName": false
+        }
+    },
+    "name": "name"
+}
