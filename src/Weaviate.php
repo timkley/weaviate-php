@@ -4,6 +4,7 @@ namespace Weaviate;
 
 use Weaviate\Api\Batch;
 use Weaviate\Api\GraphQL;
+use Weaviate\Api\Meta;
 use Weaviate\Api\Objects;
 use Weaviate\Api\Schema;
 
@@ -15,6 +16,7 @@ class Weaviate
     private Objects $objects;
     private Batch $batch;
     private GraphQL $graphQL;
+    private Meta $meta;
 
     public function __construct(string $apiUrl, string $apiToken, array $additionalHeaders = [])
     {
@@ -39,5 +41,10 @@ class Weaviate
     public function graphql(): GraphQL
     {
         return $this->graphQL ??= new GraphQL($this->api);
+    }
+
+    public function meta(): Meta
+    {
+        return $this->meta ??= new Meta($this->api);
     }
 }

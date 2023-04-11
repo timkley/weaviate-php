@@ -1,0 +1,14 @@
+{
+    "hostname": "http://[::]:8080",
+    "modules": {
+        "generative-openai": {
+            "documentationHref": "https://beta.openai.com/docs/api-reference/completions",
+            "name": "Generative Search - OpenAI"
+        },
+        "text2vec-openai": {
+            "documentationHref": "https://beta.openai.com/docs/guides/embeddings/what-are-embeddings",
+            "name": "OpenAI Module"
+        }
+    },
+    "version": "1.17.4"
+}
