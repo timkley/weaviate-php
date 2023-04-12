@@ -14,14 +14,21 @@ class Api
     public HttpClient $httpClient;
     public Response $latestResponse;
 
-    //    protected ?string $filter = null;
-    //    protected ?string $order = null;
-    //    protected ?int $page = null;
-    //    protected ?int $pageSize = null;
+    protected array $queryParameters = [];
 
     public function __construct(private readonly string $apiUrl, private readonly string $apiToken, private readonly array $additionalHeaders = [])
     {
         $this->httpClient = new HttpClient();
+    }
+
+    public function setQueryParameters(array $queryParameters): void
+    {
+        $this->queryParameters = $queryParameters;
+    }
+
+    public function getQueryParameters(): array
+    {
+        return $this->queryParameters;
     }
 
     /**
@@ -83,6 +90,7 @@ class Api
     {
         $httpClient = $this->httpClient
             ->withHeaders($this->additionalHeaders)
+            ->withOptions(['query' => $this->queryParameters])
             ->baseUrl($this->apiUrl);
 
         if ($this->apiToken) {

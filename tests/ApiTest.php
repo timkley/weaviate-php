@@ -17,3 +17,9 @@ it('can make a request with different methods', function (string $method) {
     'patch',
     'delete',
 ]);
+
+it('accepts query parameters', function () {
+    weaviate()->api->setQueryParameters(['test' => 'value', 'filter' => 'another-value']);
+
+    expect(weaviate()->api->getQueryParameters())->toBe(['test' => 'value', 'filter' => 'another-value']);
+});

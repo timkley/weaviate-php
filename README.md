@@ -29,6 +29,7 @@ use Weaviate\Weaviate;
 
 $weaviate = new Weaviate('http://localhost:8080', 'your-token');
 
+// using the GraphQL API
 $weaviate->graphql()->get('{
     Get {
         Things {
@@ -39,7 +40,11 @@ $weaviate->graphql()->get('{
     }
 }');
 
+// using the `batch` REST API
 $weaviate->batch()->create($objects);
+
+// adding query parameters
+$weaviate->objects()->withQueryParameters(['limit' => 10])->get();
 ```
 
 ## Testing
