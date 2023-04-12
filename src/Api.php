@@ -61,6 +61,17 @@ class Api
      * @throws AuthenticationException
      * @throws NotFoundException
      */
+    public function patch(string $endpoint, array $data = []): Response
+    {
+        $this->latestResponse = $this->request()->patch($endpoint, $data);
+
+        return $this->response();
+    }
+
+    /**
+     * @throws AuthenticationException
+     * @throws NotFoundException
+     */
     public function delete(string $endpoint, array $data = []): Response
     {
         $this->latestResponse = $this->request()->delete($endpoint, $data);
