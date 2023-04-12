@@ -44,7 +44,7 @@
     "prefer-stable": true,
     "scripts": {
         "phpstan": [
-            "./vendor/bin/phpstan --memory-limit=2048M -c phpstan.neon"
+            "./vendor/bin/phpstan --memory-limit=2048M --configuration=phpstan.neon"
         ],
         "test": [
             "./vendor/bin/pest"
