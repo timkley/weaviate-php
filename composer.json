@@ -18,11 +18,11 @@
     "require": {
         "php": "^8.1|^8.2",
         "guzzlehttp/guzzle": "^7.0",
-        "illuminate/http": "^9.0"
+        "illuminate/http": "^10.0"
     },
     "require-dev": {
-        "phpstan/phpstan": "^1.8",
-        "pestphp/pest": "^1.11"
+        "pestphp/pest": "^2.0",
+        "phpstan/phpstan": "^1.8"
     },
     "autoload": {
         "psr-4": {
@@ -44,7 +44,7 @@
     "prefer-stable": true,
     "scripts": {
         "phpstan": [
-            "./vendor/bin/phpstan --memory-limit=2048M"
+            "./vendor/bin/phpstan --memory-limit=2048M -c phpstan.neon"
         ],
         "test": [
             "./vendor/bin/pest"
