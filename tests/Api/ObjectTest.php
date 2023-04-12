@@ -59,3 +59,11 @@ it('can replace an object', function () {
 
     expect($object)->toBeInstanceOf(ObjectModel::class);
 });
+
+it('can delete an object', function () {
+    fakeResponse();
+
+    $response = weaviate()->objects()->delete('Category', 'id');
+
+    expect($response)->status()->toBe(200);
+});

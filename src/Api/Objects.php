@@ -2,6 +2,7 @@
 
 namespace Weaviate\Api;
 
+use Illuminate\Http\Client\Response;
 use Weaviate\Collections\ObjectCollection;
 use Weaviate\Model\ObjectModel;
 
@@ -40,5 +41,10 @@ class Objects extends Endpoint
     public function replace(string $className, string $id, array $data): ObjectModel
     {
         return $this->update($className, $id, $data, true);
+    }
+
+    public function delete(string $className, string $id): Response
+    {
+        return $this->api->delete(self::ENDPOINT . '/' . $className . '/' . $id);
     }
 }
