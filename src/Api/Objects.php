@@ -29,4 +29,16 @@ class Objects extends Endpoint
             $this->api->post(self::ENDPOINT, $data)->json()
         );
     }
+
+    public function update(string $className, string $id, array $data, bool $replace = false): ObjectModel
+    {
+        return new ObjectModel(
+            $this->api->{$replace ? 'put' : 'patch'}(self::ENDPOINT . '/' . $className . '/' . $id, $data)->json()
+        );
+    }
+
+    public function replace(string $className, string $id, array $data): ObjectModel
+    {
+        return $this->update($className, $id, $data, true);
+    }
 }

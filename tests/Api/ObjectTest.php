@@ -33,3 +33,29 @@ it('can create an object', function () {
 
     expect($object)->toBeInstanceOf(ObjectModel::class);
 });
+
+it('can update an object', function () {
+    fakeJsonResponse('object.json');
+
+    $object = weaviate()->objects()->update('Category', 'id', [
+        'class' => 'Category',
+        'properties' => [
+            'name' => 'Test',
+        ],
+    ]);
+
+    expect($object)->toBeInstanceOf(ObjectModel::class);
+});
+
+it('can replace an object', function () {
+    fakeJsonResponse('object.json');
+
+    $object = weaviate()->objects()->replace('Category', 'id', [
+        'class' => 'Category',
+        'properties' => [
+            'name' => 'Test',
+        ],
+    ]);
+
+    expect($object)->toBeInstanceOf(ObjectModel::class);
+});
