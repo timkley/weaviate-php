@@ -12,10 +12,20 @@ it('can create objects in batch', function () {
     expect($objects)->toBeInstanceOf(ObjectCollection::class);
 });
 
-it('can delete objects in batch', function () {
+it('can delete objects in batch', function (?string $outputMethod) {
     fakeJsonResponse('objects.json');
 
-    $response = weaviate()->batch()->delete('where x is y');
+    $response = weaviate()->batch()->delete('Category', ['path'], $outputMethod);
 
     expect($response->status())->toBe(200);
-});
+})->with([
+    'minimal',
+    'verbose',
+    null
+]);
+
+it('throws an exception when using an unsupported output method', function () {
+    fakeJsonResponse('objects.json');
+
+    $object = weaviate()->batch()->delete('Category', [], 'invalid');
+})->expectException(\InvalidArgumentException::class);
