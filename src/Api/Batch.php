@@ -31,7 +31,7 @@ class Batch extends Endpoint
             $output = self::DEFAULT_OUTPUT;
         }
 
-        if (!in_array($output, self::OUTPUT_METHODS)) {
+        if (! in_array($output, self::OUTPUT_METHODS)) {
             throw new \InvalidArgumentException('Invalid output method');
         }
 

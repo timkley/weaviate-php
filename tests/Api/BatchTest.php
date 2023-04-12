@@ -21,7 +21,7 @@ it('can delete objects in batch', function (?string $outputMethod) {
 })->with([
     'minimal',
     'verbose',
-    null
+    null,
 ]);
 
 it('throws an exception when using an unsupported output method', function () {
