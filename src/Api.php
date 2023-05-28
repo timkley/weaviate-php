@@ -16,8 +16,12 @@ class Api
 
     protected array $queryParameters = [];
 
-    public function __construct(private readonly string $apiUrl, private readonly string $apiToken, private readonly array $additionalHeaders = [])
-    {
+    public function __construct(
+        private readonly string $apiUrl,
+        #[\SensitiveParameter]
+        private readonly string $apiToken,
+        private readonly array $additionalHeaders = []
+    ) {
         $this->httpClient = new HttpClient();
     }
 
