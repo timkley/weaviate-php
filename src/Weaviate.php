@@ -18,8 +18,12 @@ class Weaviate
     private GraphQL $graphQL;
     private Meta $meta;
 
-    public function __construct(string $apiUrl, string $apiToken, array $additionalHeaders = [])
-    {
+    public function __construct(
+        string $apiUrl,
+        #[\SensitiveParameter]
+        string $apiToken,
+        array $additionalHeaders = []
+    ) {
         $this->api = new Api($apiUrl, $apiToken, $additionalHeaders);
     }
 
