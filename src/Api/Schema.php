@@ -41,7 +41,7 @@ class Schema extends Endpoint
     public function addProperty(string $className, array $data): PropertyModel
     {
         return new PropertyModel(
-            $this->api->put(self::ENDPOINT . '/' . $className, $data)->json()
+            $this->api->post(self::ENDPOINT . '/' . $className . '/properties', $data)->json()
         );
     }
 
