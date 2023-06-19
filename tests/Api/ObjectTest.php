@@ -8,7 +8,7 @@ use Weaviate\Model\ObjectModel;
 it('can get all data objects', function () {
     fakeJsonResponse('objects.json');
 
-    $objects = weaviate()->objects()->get();
+    $objects = weaviate()->dataObject()->get();
 
     expect($objects)->toBeInstanceOf(ObjectCollection::class);
 });
@@ -16,7 +16,7 @@ it('can get all data objects', function () {
 it('can get a single object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->objects()->getObject('Category', '1234');
+    $object = weaviate()->dataObject()->getById('Category', '1234');
 
     expect($object)->toBeInstanceOf(ObjectModel::class);
 });
@@ -24,7 +24,7 @@ it('can get a single object', function () {
 it('can create an object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->objects()->create([
+    $object = weaviate()->dataObject()->create([
         'class' => 'Category',
         'properties' => [
             'name' => 'Test',
@@ -37,7 +37,7 @@ it('can create an object', function () {
 it('can update an object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->objects()->update('Category', 'id', [
+    $object = weaviate()->dataObject()->update('Category', 'id', [
         'class' => 'Category',
         'properties' => [
             'name' => 'Test',
@@ -50,7 +50,7 @@ it('can update an object', function () {
 it('can replace an object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->objects()->replace('Category', 'id', [
+    $object = weaviate()->dataObject()->replace('Category', 'id', [
         'class' => 'Category',
         'properties' => [
             'name' => 'Test',
@@ -63,7 +63,15 @@ it('can replace an object', function () {
 it('can delete an object', function () {
     fakeResponse();
 
-    $response = weaviate()->objects()->delete('Category', 'id');
+    $response = weaviate()->dataObject()->delete('Category', 'id');
 
     expect($response)->status()->toBe(200);
+});
+
+it('can check if an object exists', function () {
+    fakeJsonResponse('object.json');
+
+    $response = weaviate()->dataObject()->exists('Category', 'id');
+
+    expect($response->status())->toBe(200);
 });

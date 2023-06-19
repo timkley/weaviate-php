@@ -10,21 +10,16 @@ class Schema extends Endpoint
 {
     public const ENDPOINT = 'schema';
 
-    public function get(): SchemaModel
+    public function get(?string $className = null): SchemaModel
     {
+        $url = $className ? self::ENDPOINT . "/{$className}" : self::ENDPOINT;
+
         return new SchemaModel(
-            $this->api->get(self::ENDPOINT)->json()
+            $this->api->get($url)->json()
         );
     }
 
-    public function getClass(string $className): SchemaModel
-    {
-        return new SchemaModel(
-            $this->api->get(self::ENDPOINT . '/' . $className)->json()
-        );
-    }
-
-    public function create(array $data): SchemaModel
+    public function createClass(array $data): SchemaModel
     {
         return new SchemaModel(
             $this->api->post(self::ENDPOINT, $data)->json()
@@ -45,8 +40,13 @@ class Schema extends Endpoint
         );
     }
 
-    public function delete(string $className): Response
+    public function deleteClass(string $className): Response
     {
         return $this->api->delete(self::ENDPOINT . '/' . $className);
+    }
+
+    public function deleteAll(): Response
+    {
+        return $this->api->delete(self::ENDPOINT);
     }
 }

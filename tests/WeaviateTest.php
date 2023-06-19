@@ -4,7 +4,7 @@ namespace Tests;
 
 use Weaviate\Api\Batch;
 use Weaviate\Api\GraphQL;
-use Weaviate\Api\Objects;
+use Weaviate\Api\DataObject;
 use Weaviate\Api\Schema;
 
 it('returns the schema api', function () {
@@ -12,7 +12,7 @@ it('returns the schema api', function () {
 });
 
 it('returns the objects api', function () {
-    expect(weaviate()->objects())->toBeInstanceOf(Objects::class);
+    expect(weaviate()->dataObject())->toBeInstanceOf(DataObject::class);
 });
 
 it('returns the batch api', function () {

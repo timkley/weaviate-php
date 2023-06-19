@@ -4,7 +4,7 @@
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/timkley/weaviate-php/run-tests.yml?label=tests)](https://github.com/timkley/weaviate-php/actions?query=workflow%3Arun-tests+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/timkley/weaviate-php.svg?style=flat-square)](https://packagist.org/packages/timkley/weaviate-php)
 
-This is a wrapper around the [Weaviate REST API](https://weaviate.io/developers/weaviate/api/rest). It is still a WIP and not all endpoints are implemented.
+This is a wrapper around the [Weaviate REST API](https://weaviate.io/developers/weaviate/api/rest).
 
 ## Installation
 
@@ -44,7 +44,7 @@ $weaviate->graphql()->get('{
 $weaviate->batch()->create($objects);
 
 // adding query parameters
-$weaviate->objects()->withQueryParameters(['limit' => 10])->get();
+$weaviate->dataObject()->withQueryParameters(['limit' => 10])->get();
 ```
 
 ## Testing

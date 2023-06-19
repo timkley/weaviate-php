@@ -6,7 +6,7 @@ use Illuminate\Http\Client\Response;
 use Weaviate\Collections\ObjectCollection;
 use Weaviate\Model\ObjectModel;
 
-class Objects extends Endpoint
+class DataObject extends Endpoint
 {
     public const ENDPOINT = 'objects';
 
@@ -17,7 +17,7 @@ class Objects extends Endpoint
         );
     }
 
-    public function getObject(string $className, string $id): Object
+    public function getById(string $className, string $id): Object
     {
         return new ObjectModel(
             $this->api->get(self::ENDPOINT . '/' . $className . '/' . $id)->json()
@@ -46,5 +46,10 @@ class Objects extends Endpoint
     public function delete(string $className, string $id): Response
     {
         return $this->api->delete(self::ENDPOINT . '/' . $className . '/' . $id);
+    }
+
+    public function exists(string $className, string $id): Response
+    {
+        return $this->api->head(self::ENDPOINT . '/' . $className . '/' . $id);
     }
 }

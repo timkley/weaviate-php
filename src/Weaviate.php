@@ -5,7 +5,7 @@ namespace Weaviate;
 use Weaviate\Api\Batch;
 use Weaviate\Api\GraphQL;
 use Weaviate\Api\Meta;
-use Weaviate\Api\Objects;
+use Weaviate\Api\DataObject;
 use Weaviate\Api\Schema;
 
 class Weaviate
@@ -13,7 +13,7 @@ class Weaviate
     public Api $api;
 
     private Schema $schema;
-    private Objects $objects;
+    private DataObject $objects;
     private Batch $batch;
     private GraphQL $graphQL;
     private Meta $meta;
@@ -32,9 +32,9 @@ class Weaviate
         return $this->schema ??= new Schema($this->api);
     }
 
-    public function objects(): Objects
+    public function dataObject(): DataObject
     {
-        return $this->objects ??= new Objects($this->api);
+        return $this->objects ??= new DataObject($this->api);
     }
 
     public function batch(): Batch

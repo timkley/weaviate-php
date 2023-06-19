@@ -90,6 +90,17 @@ class Api
         return $this->response();
     }
 
+    /**
+     * @throws AuthenticationException
+     * @throws NotFoundException
+     */
+    public function head(string $endpoint): Response
+    {
+        $this->latestResponse = $this->request()->head($endpoint);
+
+        return $this->response();
+    }
+
     protected function request(): PendingRequest
     {
         $httpClient = $this->httpClient

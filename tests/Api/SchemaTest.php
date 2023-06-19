@@ -16,7 +16,7 @@ it('can get the schema', function () {
 it('can get a specific schema class', function () {
     fakeJsonResponse('schema.json');
 
-    $schema = weaviate()->schema()->getClass('Category');
+    $schema = weaviate()->schema()->get('Category');
 
     expect($schema)->toBeInstanceOf(SchemaModel::class);
 });
@@ -24,7 +24,7 @@ it('can get a specific schema class', function () {
 it('can create a schema class', function () {
     fakeJsonResponse('dataClass.json');
 
-    $schemaClass = weaviate()->schema()->create([
+    $schemaClass = weaviate()->schema()->createClass([
         'class' => 'Category',
         'description' => 'A category',
         'properties' => [
@@ -66,7 +66,14 @@ it('can add a property', function () {
 
 it('can delete a schema class', function () {
     fakeResponse();
-    $response = weaviate()->schema()->delete('Category');
+    $response = weaviate()->schema()->deleteClass('Category');
+
+    expect($response)->status()->toBe(200);
+});
+
+it('can delete all classes', function () {
+    fakeResponse();
+    $response = weaviate()->schema()->deleteAll();
 
     expect($response)->status()->toBe(200);
 });
