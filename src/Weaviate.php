@@ -3,9 +3,9 @@
 namespace Weaviate;
 
 use Weaviate\Api\Batch;
+use Weaviate\Api\DataObject;
 use Weaviate\Api\GraphQL;
 use Weaviate\Api\Meta;
-use Weaviate\Api\DataObject;
 use Weaviate\Api\Schema;
 
 class Weaviate

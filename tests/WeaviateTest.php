@@ -3,8 +3,8 @@
 namespace Tests;
 
 use Weaviate\Api\Batch;
-use Weaviate\Api\GraphQL;
 use Weaviate\Api\DataObject;
+use Weaviate\Api\GraphQL;
 use Weaviate\Api\Schema;
 
 it('returns the schema api', function () {
