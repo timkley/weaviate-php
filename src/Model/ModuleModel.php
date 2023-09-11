@@ -11,9 +11,9 @@ class ModuleModel extends Model
     public function __construct(array $data)
     {
         $this->key = (string) array_key_first($data);
-        $data = $data[$this->key];
-        $this->name = $data['name'];
-        $this->documentationHref = $data['documentationHref'];
+        $data = $data[$this->key] ?? [];
+        $this->name = $data['name'] ?? '';
+        $this->documentationHref = $data['documentationHref'] ?? '';
     }
 
     public function getKey(): string
