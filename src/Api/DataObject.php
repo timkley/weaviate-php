@@ -33,11 +33,24 @@ class DataObject extends Endpoint
 
     public function update(string $className, string $id, array $data, bool $replace = false): ObjectModel
     {
-        return new ObjectModel(
-            $this->api->{$replace ? 'put' : 'patch'}(self::ENDPOINT . '/' . $className . '/' . $id, $data)->json()
-        );
+        if ($replace) {
+            $response = $this->api->put(self::ENDPOINT . '/' . $className . '/' . $id, $data);
+            $responseData = $response->json();
+        } else {
+            $response = $this->api->patch(self::ENDPOINT . '/' . $className . '/' . $id, $data);
+            // workaround, no data is available in PATCH response
+            $responseData = [
+                'class' => $className,
+                'id' => $id,
+                'vector' => $data['vector'] ?? null,
+                'properties' => $data['properties'] ?? null,
+                'creationTimeUnix' => now()->timestamp, // workaround, field not available in PATCH response
+                'lastUpdateTimeUnix' => now()->timestamp, // workaround, field not available in PATCH response
+            ];
+        }
+        return new ObjectModel($responseData);
     }
-
+    
     public function replace(string $className, string $id, array $data): ObjectModel
     {
         return $this->update($className, $id, $data, true);
