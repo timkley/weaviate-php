@@ -1,6 +1,6 @@
 {
     "name": "timkley/weaviate-php",
-    "version": "0.4.0",
+    "version": "0.5.0",
     "description": "A PHP HTTP Client for the Weaviate REST API",
     "keywords": [
         "php",
