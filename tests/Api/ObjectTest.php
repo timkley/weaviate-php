@@ -37,27 +37,27 @@ it('can create an object', function () {
 it('can update an object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->dataObject()->update('Category', 'id', [
+    $response = weaviate()->dataObject()->update('Category', 'id', [
         'class' => 'Category',
         'properties' => [
             'name' => 'Test',
         ],
     ]);
 
-    expect($object)->toBeInstanceOf(ObjectModel::class);
+    expect($response)->toBeBool();
 });
 
 it('can replace an object', function () {
     fakeJsonResponse('object.json');
 
-    $object = weaviate()->dataObject()->replace('Category', 'id', [
+    $response = weaviate()->dataObject()->replace('Category', 'id', [
         'class' => 'Category',
         'properties' => [
             'name' => 'Test',
         ],
     ]);
 
-    expect($object)->toBeInstanceOf(ObjectModel::class);
+    expect($response)->toBeBool();
 });
 
 it('can delete an object', function () {

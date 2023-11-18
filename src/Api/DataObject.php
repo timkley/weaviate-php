@@ -31,14 +31,12 @@ class DataObject extends Endpoint
         );
     }
 
-    public function update(string $className, string $id, array $data, bool $replace = false): ObjectModel
+    public function update(string $className, string $id, array $data, bool $replace = false): bool
     {
-        return new ObjectModel(
-            $this->api->{$replace ? 'put' : 'patch'}(self::ENDPOINT . '/' . $className . '/' . $id, $data)->json()
-        );
+        return (bool) $this->api->{$replace ? 'put' : 'patch'}(self::ENDPOINT . '/' . $className . '/' . $id, $data);
     }
 
-    public function replace(string $className, string $id, array $data): ObjectModel
+    public function replace(string $className, string $id, array $data): bool
     {
         return $this->update($className, $id, $data, true);
     }
