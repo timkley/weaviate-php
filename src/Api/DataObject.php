@@ -8,7 +8,7 @@ use Weaviate\Model\ObjectModel;
 
 class DataObject extends Endpoint
 {
-    public const ENDPOINT = 'objects';
+    public const ENDPOINT = 'v1/objects';
 
     public function get(): ObjectCollection
     {

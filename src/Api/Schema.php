@@ -8,7 +8,7 @@ use Weaviate\Model\SchemaModel as SchemaModel;
 
 class Schema extends Endpoint
 {
-    public const ENDPOINT = 'schema';
+    public const ENDPOINT = 'v1/schema';
 
     public function get(?string $className = null): SchemaModel
     {

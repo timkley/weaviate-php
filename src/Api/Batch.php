@@ -7,7 +7,7 @@ use Weaviate\Collections\ObjectCollection;
 
 class Batch extends Endpoint
 {
-    public const ENDPOINT = 'batch/objects';
+    public const ENDPOINT = 'v1/batch/objects';
 
     protected const OUTPUT_METHODS = [
         'minimal',

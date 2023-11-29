@@ -4,7 +4,7 @@ namespace Weaviate\Api;
 
 class GraphQL extends Endpoint
 {
-    public const ENDPOINT = 'graphql';
+    public const ENDPOINT = 'v1/graphql';
 
     public function get(string $query): array
     {

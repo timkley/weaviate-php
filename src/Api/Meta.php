@@ -6,7 +6,7 @@ use Weaviate\Model\MetaModel;
 
 class Meta extends Endpoint
 {
-    public const ENDPOINT = 'meta';
+    public const ENDPOINT = 'v1/meta';
 
     public function get(): MetaModel
     {
