@@ -14,6 +14,8 @@ class Api
     public HttpClient $httpClient;
     public Response $latestResponse;
 
+    protected string $weaviateApiVersion = 'v1';
+
     protected array $queryParameters = [];
 
     public function __construct(
@@ -106,7 +108,7 @@ class Api
         $httpClient = $this->httpClient
             ->withHeaders($this->additionalHeaders)
             ->withOptions(['query' => $this->queryParameters])
-            ->baseUrl($this->apiUrl);
+            ->baseUrl(rtrim($this->apiUrl, '/') . '/' . $this->weaviateApiVersion);
 
         if ($this->apiToken) {
             $httpClient = $httpClient->withToken($this->apiToken);

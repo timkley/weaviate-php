@@ -27,7 +27,7 @@ This package supports API key authentication (available in Weaviate 1.18 and hig
 
 use Weaviate\Weaviate;
 
-$weaviate = new Weaviate('http://localhost:8080/v1', 'your-token');
+$weaviate = new Weaviate('http://localhost:8080', 'your-token');
 
 // using the GraphQL API
 $weaviate->graphql()->get('{
