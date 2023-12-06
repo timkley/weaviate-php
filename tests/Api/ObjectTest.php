@@ -11,6 +11,7 @@ it('can get all data objects', function () {
     $objects = weaviate()->dataObject()->get();
 
     expect($objects)->toBeInstanceOf(ObjectCollection::class);
+    expect($objects->first())->toBeInstanceOf(ObjectModel::class);
 });
 
 it('can get a single object', function () {

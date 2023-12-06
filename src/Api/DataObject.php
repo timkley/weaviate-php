@@ -12,9 +12,9 @@ class DataObject extends Endpoint
 
     public function get(): ObjectCollection
     {
-        return new ObjectCollection(
-            $this->api->get(self::ENDPOINT)->json()
-        );
+        $response = $this->api->get(self::ENDPOINT)->json();
+
+        return isset($response['objects']) ? ObjectCollection::fromArray($response['objects']) : new ObjectCollection([]);
     }
 
     public function getById(string $className, string $id): Object
