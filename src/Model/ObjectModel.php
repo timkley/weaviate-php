@@ -6,6 +6,7 @@ use Weaviate\Collections\PropertyCollection;
 
 class ObjectModel extends Model
 {
+    private string $id;
     private string $class;
     private ?PropertyCollection $properties;
     private ?array $vector;
@@ -14,11 +15,17 @@ class ObjectModel extends Model
 
     public function __construct(array $data)
     {
+        $this->id = $data['id'];
         $this->class = $data['class'];
         $this->properties = isset($data['properties']) ? PropertyCollection::fromArray($data['properties']) : null;
         $this->vector = $data['vector'] ?? null;
         $this->creationTimeUnix = $data['creationTimeUnix'];
         $this->lastUpdateTimeUnix = $data['lastUpdateTimeUnix'];
+    }
+
+    public function getId(): string
+    {
+        return $this->id;
     }
 
     public function getClass(): string
