@@ -15,7 +15,7 @@ class ObjectModel extends Model
 
     public function __construct(array $data)
     {
-        $this->id = $data['id'];
+        $this->id = $data['_additional']['id'] ?? '';
         $this->class = $data['class'];
         $this->properties = isset($data['properties']) ? PropertyCollection::fromArray($data['properties']) : null;
         $this->vector = $data['vector'] ?? null;
