@@ -22,7 +22,8 @@ class Api
         private readonly string $apiUrl,
         #[\SensitiveParameter]
         private readonly string $apiToken,
-        private readonly array $additionalHeaders = []
+        private readonly array $additionalHeaders = [],
+        private readonly int $timeout = 30,
     ) {
         $this->httpClient = new HttpClient();
     }
@@ -108,6 +109,7 @@ class Api
         $httpClient = $this->httpClient
             ->withHeaders($this->additionalHeaders)
             ->withOptions(['query' => $this->queryParameters])
+            ->timeout($this->timeout)
             ->baseUrl(rtrim($this->apiUrl, '/') . '/' . $this->weaviateApiVersion);
 
         if ($this->apiToken) {

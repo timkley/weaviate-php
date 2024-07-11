@@ -22,9 +22,10 @@ class Weaviate
         string $apiUrl,
         #[\SensitiveParameter]
         string $apiToken,
-        array $additionalHeaders = []
+        array $additionalHeaders = [],
+        int $timeout = 30
     ) {
-        $this->api = new Api($apiUrl, $apiToken, $additionalHeaders);
+        $this->api = new Api($apiUrl, $apiToken, $additionalHeaders, $timeout);
     }
 
     public function schema(): Schema
