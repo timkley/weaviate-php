@@ -12,9 +12,11 @@ jobs:
         with:
           ref: ${{ github.head_ref }}
 
-      - name: Install composer
+      - name: Setup php
         uses: shivammathur/setup-php@v2
-        run: composer install
+
+      - name: Install composer
+        uses: php-actions/composer@v6
 
       - name: PHPStan
         run: composer phpstan
