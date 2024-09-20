@@ -21,7 +21,7 @@
         "illuminate/http": "^11.0"
     },
     "require-dev": {
-        "pestphp/pest": "^2.0",
+        "pestphp/pest": "^v3.0.8",
         "phpstan/phpstan": "^1.8"
     },
     "autoload": {
