@@ -15,8 +15,8 @@ jobs:
       - name: Setup php
         uses: shivammathur/setup-php@v2
 
-      - name: Install composer
-        uses: php-actions/composer@v6
+      - name: Install composer dependencies
+        run: composer install --no-interaction --no-ansi --no-progress --no-suggest
 
       - name: PHPStan
         run: composer phpstan
