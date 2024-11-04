@@ -48,6 +48,10 @@
         ],
         "test": [
             "./vendor/bin/pest"
+        ],
+        "prepush": [
+            "@phpstan",
+            "@test"
         ]
     }
 }
