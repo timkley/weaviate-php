@@ -18,6 +18,9 @@ class Weaviate
     private GraphQL $graphQL;
     private Meta $meta;
 
+    /**
+     * @param array<string, string> $additionalHeaders
+     */
     public function __construct(
         string $apiUrl,
         #[\SensitiveParameter]
