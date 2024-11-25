@@ -650,7 +650,7 @@
         },
         {
             "name": "illuminate/collections",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/collections.git",
@@ -705,7 +705,7 @@
         },
         {
             "name": "illuminate/conditionable",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/conditionable.git",
@@ -751,7 +751,7 @@
         },
         {
             "name": "illuminate/contracts",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/contracts.git",
@@ -799,16 +799,16 @@
         },
         {
             "name": "illuminate/filesystem",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/filesystem.git",
-                "reference": "ce7013a350fb06bc65e8a2cf15fd2015f49e476d"
+                "reference": "66f5ea519b326c77dbd7609d061eb62706477606"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/ce7013a350fb06bc65e8a2cf15fd2015f49e476d",
-                "reference": "ce7013a350fb06bc65e8a2cf15fd2015f49e476d",
+                "url": "https://api.github.com/repos/illuminate/filesystem/zipball/66f5ea519b326c77dbd7609d061eb62706477606",
+                "reference": "66f5ea519b326c77dbd7609d061eb62706477606",
                 "shasum": ""
             },
             "require": {
@@ -862,20 +862,20 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-09-22T15:10:50+00:00"
+            "time": "2024-11-18T21:41:34+00:00"
         },
         {
             "name": "illuminate/http",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/http.git",
-                "reference": "94af80cf454ce8ac9f51f2bf485ff8b886fb2e09"
+                "reference": "ac0e53a713819aa0ee418aa162863f954ed2b442"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/http/zipball/94af80cf454ce8ac9f51f2bf485ff8b886fb2e09",
-                "reference": "94af80cf454ce8ac9f51f2bf485ff8b886fb2e09",
+                "url": "https://api.github.com/repos/illuminate/http/zipball/ac0e53a713819aa0ee418aa162863f954ed2b442",
+                "reference": "ac0e53a713819aa0ee418aa162863f954ed2b442",
                 "shasum": ""
             },
             "require": {
@@ -923,11 +923,11 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-11-15T16:40:26+00:00"
+            "time": "2024-11-19T21:06:14+00:00"
         },
         {
             "name": "illuminate/macroable",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/macroable.git",
@@ -973,7 +973,7 @@
         },
         {
             "name": "illuminate/session",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/session.git",
@@ -1030,16 +1030,16 @@
         },
         {
             "name": "illuminate/support",
-            "version": "v11.32.0",
+            "version": "v11.33.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/illuminate/support.git",
-                "reference": "213bc04ed2a75dac441e602df4568154c36a3670"
+                "reference": "3e248061e77b67cdf868411e68cf17de524e3d1d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/illuminate/support/zipball/213bc04ed2a75dac441e602df4568154c36a3670",
-                "reference": "213bc04ed2a75dac441e602df4568154c36a3670",
+                "url": "https://api.github.com/repos/illuminate/support/zipball/3e248061e77b67cdf868411e68cf17de524e3d1d",
+                "reference": "3e248061e77b67cdf868411e68cf17de524e3d1d",
                 "shasum": ""
             },
             "require": {
@@ -1102,7 +1102,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2024-11-14T16:30:16+00:00"
+            "time": "2024-11-19T19:46:19+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3113,16 +3113,16 @@
         },
         {
             "name": "voku/portable-ascii",
-            "version": "2.0.1",
+            "version": "2.0.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/portable-ascii.git",
-                "reference": "b56450eed252f6801410d810c8e1727224ae0743"
+                "reference": "b1d923f88091c6bf09699efcd7c8a1b1bfd7351d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/b56450eed252f6801410d810c8e1727224ae0743",
-                "reference": "b56450eed252f6801410d810c8e1727224ae0743",
+                "url": "https://api.github.com/repos/voku/portable-ascii/zipball/b1d923f88091c6bf09699efcd7c8a1b1bfd7351d",
+                "reference": "b1d923f88091c6bf09699efcd7c8a1b1bfd7351d",
                 "shasum": ""
             },
             "require": {
@@ -3147,7 +3147,7 @@
             "authors": [
                 {
                     "name": "Lars Moelleken",
-                    "homepage": "http://www.moelleken.org/"
+                    "homepage": "https://www.moelleken.org/"
                 }
             ],
             "description": "Portable ASCII library - performance optimized (ascii) string functions for php.",
@@ -3159,7 +3159,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/portable-ascii/issues",
-                "source": "https://github.com/voku/portable-ascii/tree/2.0.1"
+                "source": "https://github.com/voku/portable-ascii/tree/2.0.3"
             },
             "funding": [
                 {
@@ -3183,7 +3183,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-08T17:03:00+00:00"
+            "time": "2024-11-21T01:49:47+00:00"
         }
     ],
     "packages-dev": [
