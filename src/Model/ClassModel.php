@@ -7,7 +7,7 @@ use Weaviate\Collections\PropertyCollection;
 class ClassModel extends Model
 {
     private string $class;
-    private ?string $description;
+    private string $description;
     private string $vectorizer;
     private ?PropertyCollection $properties;
     private ?array $moduleConfig;

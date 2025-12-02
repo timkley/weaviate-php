@@ -5,7 +5,7 @@ namespace Weaviate\Model;
 class PropertyModel extends Model
 {
     private string $name;
-    private ?string $description;
+    private string $description;
     private array $dataType;
     private ?array $moduleConfig;
 
