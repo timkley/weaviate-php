@@ -10,7 +10,7 @@ This is a wrapper around the [Weaviate REST API](https://weaviate.io/developers/
 
 ### Requirements
 
-> PHP 8.2 or PHP 8.3
+> PHP 8.3 and higher
 
 ### With composer
 
