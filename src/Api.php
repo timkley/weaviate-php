@@ -132,7 +132,7 @@ class Api
 
         if ($this->latestResponse->status() === 404) {
             throw new NotFoundException(
-                sprintf('The requested ressource %s could not be found.', $this->latestResponse->effectiveUri())
+                sprintf('The requested resource %s could not be found.', $this->latestResponse->effectiveUri())
             );
         }
 
