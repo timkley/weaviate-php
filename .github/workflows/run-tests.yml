@@ -16,7 +16,7 @@ jobs:
         php: [8.3, 8.4, 8.5]
         stability: [prefer-lowest, prefer-stable]
         include:
-          - testbench: ^9.0
+          - testbench: 9.*
 
     name: ${{ matrix.stability }} - ${{ matrix.os }}
 
