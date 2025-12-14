@@ -3,6 +3,7 @@
 namespace Weaviate;
 
 use Exception;
+use GuzzleHttp\Promise\PromiseInterface;
 use Illuminate\Http\Client\Factory as HttpClient;
 use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Http\Client\Response;
@@ -12,7 +13,7 @@ use Weaviate\Exceptions\NotFoundException;
 class Api
 {
     public HttpClient $httpClient;
-    public Response $latestResponse;
+    public Response|PromiseInterface $latestResponse;
 
     protected string $weaviateApiVersion = 'v1';
 
