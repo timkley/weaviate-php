@@ -127,6 +127,8 @@ class Api
      */
     protected function response(): Response
     {
+        assert($this->latestResponse instanceof Response);
+
         if ($this->latestResponse->status() === 401) {
             throw new AuthenticationException($this->latestResponse->json('message.description'));
         }
