@@ -43,3 +43,38 @@ jobs:
 
       - name: Execute tests
         run: composer test
+
+  # orchestra/testbench 9.* (Laravel 11) can only resolve Guzzle 7.
+  # This job installs the root constraints as published, which selects
+  # illuminate/http 13.26+ and Guzzle 8.
+  guzzle-8:
+    runs-on: ubuntu-latest
+    name: guzzle-8 - prefer-stable
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+          coverage: none
+
+      - name: Setup problem matchers
+        run: |
+          echo "::add-matcher::${{ runner.tool_cache }}/php.json"
+          echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
+
+      - name: Install dependencies
+        run: composer update --prefer-stable --prefer-dist --no-interaction
+
+      - name: Assert Guzzle 8 is installed
+        run: composer show guzzlehttp/guzzle | grep -E '^versions +: \* 8\.'
+
+      - name: Execute tests
+        run: composer test
+
+      - name: PHPStan
+        run: composer phpstan
