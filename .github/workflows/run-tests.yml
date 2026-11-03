@@ -66,7 +66,8 @@ jobs:
         run: composer update --prefer-stable --prefer-dist --no-interaction
 
       - name: Assert Guzzle 8 is installed
-        run: composer show guzzlehttp/guzzle | grep -E '^versions +: \* 8\.'
+        run: |
+          composer show guzzlehttp/guzzle | grep -E '^versions +: \* 8\.'
 
       - name: Execute tests
         run: composer test
