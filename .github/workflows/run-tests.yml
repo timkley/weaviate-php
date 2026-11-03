@@ -13,16 +13,14 @@ jobs:
       fail-fast: true
       matrix:
         os: [ubuntu-latest, windows-latest]
-        php: [8.3, 8.4, 8.5]
+        php: [8.4, 8.5]
         stability: [prefer-lowest, prefer-stable]
-        include:
-          - testbench: 9.*
 
     name: ${{ matrix.stability }} - ${{ matrix.os }}
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
@@ -37,28 +35,25 @@ jobs:
           echo "::add-matcher::${{ runner.tool_cache }}/phpunit.json"
 
       - name: Install dependencies
-        run: |
-          composer require "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
-          composer update --${{ matrix.stability }} --prefer-dist --no-interaction
+        run: composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
       - name: Execute tests
         run: composer test
 
-  # orchestra/testbench 9.* (Laravel 11) can only resolve Guzzle 7.
-  # This job installs the root constraints as published, which selects
-  # illuminate/http 13.26+ and Guzzle 8.
+  # Published prefer-stable constraints select illuminate/http 13 and Guzzle 8.
+  # orchestra/testbench 9 is not installed: it conflicts with PHPUnit 13.
   guzzle-8:
     runs-on: ubuntu-latest
     name: guzzle-8 - prefer-stable
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.3
+          php-version: 8.4
           extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
           coverage: none
 
